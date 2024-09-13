@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    style.
+      body { font-family: Arial, sans-serif; }
+      table { width: 50%; margin: 0 auto; border-collapse: collapse; }
+      th, td { padding: 10px; border: 1px solid #ddd; }
+  body
+    h1= title
+    table
+      thead
+        tr
+          th ID
+          th Título
+          th Completado
+      tbody
+        each task in tasks
+          tr
+            td= task.id
+            td= task.title
+            td= task.completed ? 'Sí' : 'No'
+    a(href="/") Regresar a la página principal
